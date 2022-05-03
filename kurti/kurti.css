@@ -1,0 +1,42 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: black;
+}
+.kurti{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(51, 50, 50);
+    border-radius: 5px;
+    width: 24%;
+    margin: 3px 3px;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid rgb(51, 50, 50); */
+    border-radius: 5px;
+    width: 24%;
+    margin: 3px 3px;
+}
+.kurti a, .top a{
+    text-decoration: none;
+    color: black;
+}
+.kurti a:hover, .top a:hover{
+    box-shadow: 3px 3px 5px grey;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
