@@ -71,15 +71,14 @@
     </symbol>
   </svg>
   <!-- navbar hai yha se  -->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light shadow text-dark" style="font-family: 'Playfair Display', serif;">
+  <nav class="navbar navbar-expand-lg sticky-top shadow text-dark navbar-light bg-light" >
     <div class="container-fluid">
       <a class="navbar-brand" href="/index/index.html" style="width: 10%;"><img src="/Dressnality logo2.png" alt="" class="img-fluid" style="width: 100%;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center d-flex " id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -107,6 +106,7 @@
               <li><a class="dropdown-item text-dark" href="#">Hosery</a></li>
 
             </ul>
+          </li>
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">Stiching</a>
           </li>
@@ -117,22 +117,20 @@
             <a class="nav-link text-dark" href="#">Track your order</a>
           </li>
         </ul>
-        <!-- <button class="btn btn-outline-primary " data-bs-toggle="modal" data-bs-target="#sign-upModal">Sign Up</button> -->
-        
-      </div> 
-      <ul class="d-flex justify-content-end" style="margin-bottom: 0%;"> 
-        <div class="input-group">
-          <input type="search" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <span class="input-group-text" id="basic-addon2" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg></span>
-        </div>
-        <div class="ms-3">
-        <img src="/sign in.png" alt="sign in" data-bs-toggle="modal" data-bs-target="#sign-upModal"
-          style="width: 35px; border-radius: 40px;">
+        <ul class="d-flex justify-content-end" style="margin-bottom: 0%;"> 
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg></span>
           </div>
-      </ul>
-  </div>
+          <div class="ms-3">
+          <img src="/sign in.png" alt="sign in" data-bs-toggle="modal" data-bs-target="#sign-upModal"
+            style="width: 35px; border-radius: 40px;">
+            </div>
+        </ul>
+      </div>
+    </div>
   </nav>
   <!-- Modal for sign-up -->
   <div class="modal fade" id="sign-upModal" tabindex="-1" aria-labelledby="sign-upModalLabel" aria-hidden="true">
@@ -323,14 +321,14 @@
         </div>
         <div class="row add-to-cart">
           <div class="col-md-5 product-qty">
-            <span class="btn btn-default btn-lg btn-qty">
+            <span class="btn btn-default btn-lg btn-qty" id="minus" onclick="minusClick()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash"
                 viewBox="0 0 16 16">
                 <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
               </svg>
             </span>
-            <input class="btn btn-default btn-lg btn-qty" value="1" />
-            <span class="btn btn-default btn-lg btn-qty">
+            <input class="btn btn-default btn-lg btn-qty" value="1" id="quantity" />
+            <span class="btn btn-default btn-lg btn-qty" id="plus" onclick="plusClick()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus"
                 viewBox="0 0 16 16">
                 <path
@@ -368,21 +366,27 @@
           </div><!-- end row -->
           <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active " aria-current="page" href="product.html">Description</a>
+              <a class="nav-link active "  onclick="clickDescription()">Description</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="product2.html">Delivery</a>
+              <a class="nav-link" onclick="clickDelivery()" >Delivery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reviews</a>
+              <a class="nav-link" onclick="clickReview()" >Reviews</a>
             </li>
           </ul>
           <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-10" id="description" style="display: block;">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias ipsum architecto laboriosam, nam quam
               velit a et aperiam quaerat laudantium eveniet laborum eius doloribus ipsam delectus distinctio id officiis
               ex! Repudiandae, illo maiores accusamus cum perferendis non placeat, quidem facere iure eaque tempora quae
               inventore omnis dicta ullam. Expedita, rerum.
+            </div>
+            <div class="col-md-10" id="delivery" style="display: none;">
+              this is in the delivery systemmmm
+            </div>
+            <div class="col-md-10" id="review" style="display: none;">
+              this is in the review systremmmmm
             </div>
           </div>
         </div>
@@ -521,7 +525,7 @@
 <!-- yha pr counter laga hua hai -->
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("April 10, 2022 15:40:00").getTime();
+var countDownDate = new Date("April 10, 2030 15:40:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -553,12 +557,38 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+<!-- for increment of the numbers of quantity  -->
+<script>
+  let i = document.getElementById('quantity').value;
+  if(i>= 0){
+    function minusClick(){
+    i--;
+    document.getElementById('quantity').value= i;
+  }
+  }
+  function plusClick(){
+    i++;
+    document.getElementById('quantity').value= i;
+  }
+</script>
+<!-- for the table fo description and delivery and reviews  -->
+<script>
+  function clickDescription(){
+    document.getElementById('description').style.display = "block";
+    document.getElementById('delivery').style.display = "none";
+  document.getElementById('review').style.display = "none";
+  }
+  function clickDelivery(){
+    document.getElementById('delivery').style.display = "block";
+    document.getElementById('description').style.display = "none";
+  document.getElementById('review').style.display = "none";
+  }
+  function clickReview(){
+    document.getElementById('review').style.display = "block";
+    document.getElementById('delivery').style.display = "none";
+  document.getElementById('description').style.display = "none";
+  }
+</script>
 </body>
 
 </html>
