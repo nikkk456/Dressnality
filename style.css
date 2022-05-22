@@ -51,6 +51,7 @@ a{
     background-color: black;
     color: white;
     justify-content: center;
+    height: 20%;
    
 }
 .header #left{
@@ -66,7 +67,7 @@ a{
     text-decoration: underline;
 }
 .header #center{
-    width: 50%;
+    width: 100%;
 }
 #category{
     display: grid;
